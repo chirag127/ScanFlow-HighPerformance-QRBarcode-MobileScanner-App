@@ -1,40 +1,42 @@
 # Security Policy
 
-## Reporting Security Vulnerabilities
+## Vulnerability Reporting
 
-We take the security of our application seriously. If you believe you've found a security vulnerability, we encourage you to report it to us as quickly as possible. Please do not publicly disclose the vulnerability until we've had a chance to address it.
+We take security very seriously. If you discover any security vulnerabilities within **ScanFlow-Mobile-Scanner-Utility-React-Native**, please report them responsibly.
 
-To report a security vulnerability, please follow these steps:
+## Reporting a Vulnerability
 
-1.  **Email:** Send an email to [Your Email Address or Security Contact] with a detailed description of the vulnerability, including:
-    *   The specific URL or location of the vulnerability.
+To report a security issue, please follow these steps:
+
+1.  **Do NOT** disclose the vulnerability publicly. This includes social media, forums, or public issue trackers. Public disclosure can endanger users and the project.
+2.  **Email Security:** Send an email detailing the vulnerability to `security@example.com`. Please use a descriptive subject line, such as "Security Vulnerability Report - ScanFlow-Mobile-Scanner-Utility-React-Native".
+3.  **Details:** In your email, please provide as much information as possible, including:
+    *   A clear description of the vulnerability.
     *   Steps to reproduce the vulnerability.
-    *   The potential impact of the vulnerability.
-    *   Any suggested remediation steps.
+    *   The affected version(s) of the software.
+    *   Any potential impact or exploitability.
+    *   (Optional) A suggested mitigation or fix.
+4.  **Encrypted Communication:** If you wish to encrypt your report, our PGP public key can be provided upon request.
 
-2.  **Wait for a Response:** We will acknowledge your report within [Number] business days. We will then work to verify the vulnerability and develop a fix.
+## Our Commitment
 
-3.  **Coordinate Disclosure:** Once a fix is available, we will coordinate with you to publicly disclose the vulnerability.
+*   We will acknowledge your report within **72 hours**.
+*   We will investigate the reported vulnerability thoroughly.
+*   We will inform you of the progress and estimated timeline for a fix.
+*   We will provide credit to the reporter in our release notes once the vulnerability is fixed and publicly disclosed, provided the reporter agrees to this.
 
-## Supported Versions
+## Scope
 
-We strive to provide security updates for the latest stable versions of our application. Please ensure you are using the most up-to-date version to benefit from the latest security patches.
+This security policy applies to the **ScanFlow-Mobile-Scanner-Utility-React-Native** codebase and all officially released versions of the application. Contributions that introduce security vulnerabilities will be rejected.
 
-## Security Best Practices
+## Secure Development Practices
 
-We follow industry-standard security best practices to protect our application and user data. This includes:
+We strive to follow secure development practices, including:
 
-*   **Input Validation:** We validate all user inputs to prevent injection attacks (e.g., SQL injection, cross-site scripting).
-*   **Authentication and Authorization:** We use secure authentication and authorization mechanisms to protect user accounts and data.
-*   **Data Encryption:** We encrypt sensitive data both in transit and at rest.
-*   **Regular Security Audits:** We conduct regular security audits and penetration testing to identify and address potential vulnerabilities.
-*   **Dependency Management:** We regularly update our dependencies to ensure we are using the latest security patches.
-*   **Cross-Site Scripting (XSS) Prevention:** We employ various techniques such as Content Security Policy (CSP) and output encoding to prevent XSS attacks.
-*   **Secure Coding Practices:** We adhere to secure coding practices to minimize the risk of vulnerabilities.
+*   **Input Validation:** Rigorous validation of all user inputs and external data.
+*   **Dependency Management:** Regular scanning and updating of project dependencies to mitigate known vulnerabilities.
+*   **Least Privilege:** Applying the principle of least privilege to all components and permissions.
+*   **Error Handling:** Implementing robust error handling to prevent information leakage.
+*   **Code Reviews:** Conducting thorough code reviews with a focus on security.
 
-## Security Tools and Technologies
-
-*   [List any security tools and technologies used, e.g., Dependabot, Snyk, etc.]
-
-We are committed to maintaining the security of our application and appreciate your help in identifying and reporting any vulnerabilities.
-
+Thank you for helping us keep **ScanFlow-Mobile-Scanner-Utility-React-Native** secure.
