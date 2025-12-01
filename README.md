@@ -1,21 +1,97 @@
-# ScanFlow: Elite QR & Barcode Scanner for Mobile
+# ScanFlow-Mobile-Scanner-Utility
 
-ScanFlow is a high-performance, cross-platform mobile application engineered with React Native and Expo. It offers rapid scanning and precise decoding of QR codes and diverse barcode formats, optimized for superior efficiency and an intuitive user experience across iOS and Android.
+![Build Status](https://img.shields.io/github/actions/workflow/user/your-username/your-repo/main.yml?label=Build&logo=github)
+![Code Coverage](https://img.shields.io/codecov/c/github/your-username/your-repo?label=Coverage&logo=codecov)
+![TypeScript Version](https://img.shields.io/badge/TypeScript-6.x-blue?logo=typescript)
+![Vite Version](https://img.shields.io/badge/Vite-7.x-yellow?logo=vite)
+![Biome Version](https://img.shields.io/badge/Biome-latest-brightgreen?logo=biome)
+![License](https://img.shields.io/github/license/your-username/your-repo?label=License&logo=github)
+![GitHub Stars](https://img.shields.io/github/stars/your-username/your-repo?style=social&label=Star%20⭐)
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/your-username/scanflow/ci.yml?style=flat-square&logo=githubactions)](https://github.com/your-username/scanflow/actions)
-[![Test Coverage](https://img.shields.io/codecov/c/github/your-username/scanflow?style=flat-square&logo=codecov)](https://codecov.io/github/your-username/scanflow)
-[![TypeScript Version](https://img.shields.io/typescript/v/your-username/scanflow?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
-[![License](https://img.shields.io/github/license/your-username/scanflow?style=flat-square&logo=creativecommons)](https://github.com/your-username/scanflow/blob/main/LICENSE)
-[![Latest Release](https://img.shields.io/github/v/release/your-username/scanflow?style=flat-square&logo=github)](https://github.com/your-username/scanflow/releases)
+## BLUF
+ScanFlow is an elite, high-performance, cross-platform mobile application engineered with React Native and Expo, offering rapid scanning and precise decoding of QR codes and diverse barcode formats, optimized for superior efficiency and an intuitive user experience.
 
-## 🚀 Quick Start
+## Architecture Overview
 
-To get started with ScanFlow, follow these steps:
+```ascii
+. 
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── features/
+│   │   ├── scanner/
+│   │   │   ├── components/
+│   │   │   ├── ui/
+│   │   │   └── index.ts
+│   │   └── ...
+│   ├── navigation/
+│   ├── providers/
+│   ├── screens/
+│   ├── services/
+│   ├── styles/
+│   ├── utils/
+│   └── index.tsx
+├── tests/
+│   ├── mocks/
+│   └── ...
+├── .github/
+│   ├── workflows/
+│   │   └── ci.yml
+│   ├── CODEOWNERS
+│   └── ...
+├── .vscode/
+├── app.json
+├── biome.json
+├── index.js
+├── LICENSE
+├── package.json
+├── tsconfig.json
+└── vite.config.ts
+```
+
+## Table of Contents
+
+* [Features](#features)
+* [Tech Stack](#tech-stack)
+* [Getting Started](#getting-started)
+* [Development Scripts](#development-scripts)
+* [Contribution Guidelines](#contribution-guidelines)
+* [License](#license)
+* [AI Agent Directives](#ai-agent-directives)
+
+## Features
+
+* **High-Performance Scanning:** Leverages native device capabilities for rapid QR and barcode detection.
+* **Cross-Platform Compatibility:** Built with React Native and Expo for seamless iOS and Android deployment.
+* **Intuitive User Experience:** Clean, modern UI designed for optimal usability and efficiency.
+* **Diverse Format Support:** Decodes a wide array of standard barcode symbologies.
+* **Optimized Efficiency:** Engineered for minimal resource consumption and maximum speed.
+
+## Tech Stack
+
+* **Language:** TypeScript 6.x
+* **Framework:** React Native (Expo)
+* **Bundler:** Vite 7.x
+* **Styling:** TailwindCSS (via native configuration)
+* **Linting/Formatting:** Biome
+* **Testing:** Vitest (Unit), Playwright (E2E - future integration)
+* **State Management:** Signals (Standardized)
+* **Architecture:** Feature-Sliced Design (FSD) Principles
+
+## Getting Started
+
+### Prerequisites
+
+* Node.js (v20 LTS or later)
+* npm or Yarn package manager
+* Expo CLI
+
+### Installation
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/scanflow.git
-    cd scanflow
+    git clone https://github.com/your-username/your-repo.git
+    cd your-repo
     ```
 
 2.  **Install dependencies:**
@@ -25,154 +101,123 @@ To get started with ScanFlow, follow these steps:
     yarn install
     ```
 
-3.  **Run the development server:**
+### Running the Application
+
+*   **Start the Expo development server:**
     ```bash
     npx expo start
     ```
 
-4.  **Scan the QR code** displayed in your terminal using the Expo Go app on your physical device or simulator.
+    This will launch the Expo Go app on your emulator/device or provide a QR code to scan with your physical device.
 
-## 🌟 Features
+## Development Scripts
 
-*   **High-Performance Scanning:** Optimized for speed and accuracy.
-*   **Multi-Format Support:** Decodes QR codes and a wide range of barcode types.
-*   **Cross-Platform:** Built with React Native for seamless iOS and Android deployment.
-*   **Intuitive UI/UX:** Clean, user-friendly interface.
-*   **Expo Framework:** Leverages Expo for rapid development and easy build processes.
+| Script        | Description                                   |
+| ------------- | --------------------------------------------- |
+| `npm run dev` | Starts the Expo development server.           |
+| `npm run lint`| Runs Biome to check and format code.        |
+| `npm run test`| Executes unit tests with Vitest.              |
+| `npm run build`| Creates a production build (e.g., `.ipa`, `.apk`). |
 
-## 🏗️ Architecture
+## Contribution Guidelines
 
-ScanFlow follows a modular architecture, leveraging React Native components and state management solutions. The core scanning logic is encapsulated for reusability and performance.
+See [CONTRIBUTING.md](./.github/CONTRIBUTING.md) for details on how to contribute.
 
-```ascii
-scanflow/
-├── src/
-│   ├── components/
-│   │   ├── CameraScanner.tsx
-│   │   └── ...
-│   ├── features/
-│   │   ├── scanning/
-│   │   │   ├── hooks/
-│   │   │   └── types.ts
-│   │   └── ...
-│   ├── navigation/
-│   │   └── AppNavigator.tsx
-│   ├── screens/
-│   │   ├── HomeScreen.tsx
-│   │   └── SettingsScreen.tsx
-│   ├── services/
-│   │   └── barcodeScanner.ts
-│   ├── styles/
-│   │   └── theme.ts
-│   └── App.tsx
-├── assets/
-├── app.json
-├── babel.config.js
-├── package.json
-├── tsconfig.json
-└── ...
-```
+## License
 
-## 🛠️ Development Standards & Principles
+This project is licensed under the CC BY-NC license - see the [LICENSE](LICENSE) file for details.
 
-*   **TypeScript First:** Strict typing enforced (`strict: true`).
-*   **React Native Best Practices:** Adhering to official guidelines.
-*   **Expo Ecosystem:** Utilizing Expo modules for native functionality.
-*   **Modularity & Composability:** Building reusable components.
-*   **Performance Optimization:** Focusing on efficient scanning and UI rendering.
-*   **Clean Code:** Self-documenting code, DRY, KISS principles.
+<details>
+<summary>🤖 AI Agent Directives</summary>
 
-## 🧪 Testing
-
-*   **Unit Tests:** Vitest for rapid unit testing of components and utilities.
-*   **E2E Tests:** Playwright for end-to-end scenario validation.
-*   **Coverage:** Aiming for 100% test coverage for all critical modules.
-
-## 🔒 Security
-
-*   **Dependency Audits:** Regular checks for vulnerabilities using npm audit.
-*   **Input Sanitization:** Validating all camera-captured data and user inputs.
-*   **Secure Defaults:** Ensuring Expo and React Native security best practices are followed.
-
-## 📝 Contributing
-
-Contributions are welcome! Please refer to `.github/CONTRIBUTING.md` for detailed guidelines.
-
-## 📄 License
-
-This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0). See the `LICENSE` file for more details.
-
-## ⭐ Star this Repo
-
-If you find ScanFlow useful or interesting, please consider starring this repository to show your support!
+## 1. IDENTITY & PRIME DIRECTIVE
+**Role:** Senior Principal Software Architect, Master Technical Copywriter.
+**Experience:** 40+ years.
+**Standards:** FAANG-level, "Managing the Unmanageable."
+**Current Date:** December 2025.
+**Output:** EXECUTION-ONLY. Zero plans, only code, docs, fixes.
+**Philosophy:** "Zero-Defect, High-Velocity, Future-Proof."
 
 ---
 
-<details>
-  <summary>AI Agent Directives (v1.0.0)</summary>
+## 2. AI ORCHESTRATION & GEMINI PROTOCOL (LATE 2025)
+**Mandatory Models:**
+*   `gemini-3-pro-preview` (Tier 1)
+*   `gemini-2.5-pro` (Tier 2)
+*   `gemini-2.5-flash` (Tier 3)
+*   `gemini-2.5-flash-lite-preview-09-2025` (Tier 4)
+*   `gemini-2.0-flash` (Tier 5)
+*   `gemini-2.5-flash-native-audio-preview-09-2025` (Tier 5)
+**Fallback Cascade:** Always try higher tiers first. Trigger Cool-Off on 429/500.
 
-  ## **AI AGENT DIRECTIVES (DECEMBER 2025 - APEX PROTOCOL v1.0.0)**
+---
 
-  ### 1. IDENTITY & PRIME DIRECTIVE
-  **Role:** Senior Principal Software Architect, Master Technical Copywriter, DevOps Strategist.
-  **Experience:** 40+ years.
-  **Context Date:** December 2025 (Building for 2026 standards).
-  **Output Standard:** EXECUTION-ONLY. Zero-defect, high-velocity, future-proof.
+## 3. CONTEXT-AWARE APEX TECH STACKS (LATE 2025 STANDARDS)
+*   **Project Type:** Mobile App (React Native/Expo)
+*   **Apex Toolchain Applied:**
+    *   **Language:** TypeScript 6.x (Strict)
+    *   **Framework:** React Native (Expo)
+    *   **Bundler:** Vite 7.x
+    *   **State:** Signals
+    *   **Lint/Test:** Biome + Vitest + Playwright (E2E)
 
-  ### 2. AI ORCHESTRATION & GEMINI PROTOCOL
-  **Models:** `gemini-3-pro-preview` (Tier 1), `gemini-2.5-pro` (Tier 2), `gemini-2.5-flash` (Tier 3), `gemini-2.5-flash-lite-preview-09-2025` (Tier 4), `gemini-2.0-flash` (Tier 5).
-  **Fallback:** Strict cascade. Trigger Cool-Off on 429/500.
+---
 
-  ### 3. CONTEXT-AWARE APEX TECH STACKS (LATE 2025 STANDARDS)
-  **Detected Project Type:** Web / App / Extension (JavaScript/TypeScript).
-  **Applied Apex Toolchain:**
-  *   **Language:** TypeScript 6.x (Strict).
-  *   **Bundler/Build:** Vite 7 (Rolldown).
-  *   **Native Integration:** Expo (React Native).
-  *   **State Management:** Signals (Standardized).
-  *   **Lint/Format:** Biome.
-  *   **Unit Test:** Vitest.
-  *   **E2E Test:** Playwright.
+## 4. RECURSIVE PERFECTION LOOP (THE "ZERO-ERROR" MANDATE)
+**Process:** Analyze -> Fix -> Lint/Format (`biome check --apply`) -> Test (`vitest`) -> **DECISION GATE**. Repeat until clean.
+**Constraint:** Do not stop until the build is perfectly clean.
 
-  ### 4. RECURSIVE PERFECTION LOOP
-  **Mandate:** Operate in a loop: Analyze -> Fix -> Lint/Format -> Test -> **REITERATE** if errors exist. Commit only when 100% clean.
+---
 
-  ### 5. CORE ARCHITECTURAL PRINCIPLES
-  *   **SOLID:** Enforced.
-  *   **Modularity:** Feature-First (`features/auth`).
-  *   **CQS:** Commands vs. Queries.
-  *   **12-Factor App:** Config in env.
+## 5. CORE ARCHITECTURAL PRINCIPLES
+*   **SOLID MANDATE:** SRP, OCP, LSP, ISP, DIP.
+*   **MODULARITY:** Feature-First Structure (`features/scanner`).
+*   **CQS:** Methods are Commands (Action) or Queries (Data).
+*   **12-Factor App:** Config in environment.
 
-  ### 6. CODE HYGIENE & STANDARDS
-  *   **Naming:** Semantic, descriptive (camelCase for JS/TS).
-  *   **Clean Code:** Verticality, Guard Clauses, DRY, KISS, Zero Comments (for "Why").
+---
 
-  ### 7. RELIABILITY, SECURITY & SUSTAINABILITY
-  *   **DevSecOps:** Zero Trust, SBOMs, Fail Fast, Encryption.
-  *   **Exception Handling:** Never crash, `try-catch-finally`, retry logic.
-  *   **Green Software:** Least Power, Efficiency, Lazy Loading.
+## 6. CODE HYGIENE & STANDARDS
+*   **SEMANTIC NAMING:** Descriptive verbs, `camelCase` (JS/TS).
+*   **CLEAN CODE:** Verticality, Guard Clauses, DRY, KISS. Zero comments unless explaining "Why."
 
-  ### 8. COMPREHENSIVE TESTING STRATEGY
-  *   **Structure:** `tests/` folder mirrors source.
-  *   **Pyramid:** Fast, Isolated, Repeatable.
-  *   **Coverage:** 1:1 mapping, Scenario Coverage (Success, Failure, Edge Cases).
-  *   **Zero-Error:** No console errors.
+---
 
-  ### 9. UI/UX AESTHETIC SINGULARITY (2026 STANDARD)
-  *   **Visual Language:** Liquid Glass + Neo-Brutalist + Material You 3.0.
-  *   **Motion:** Mandatory fluid animations.
-  *   **Performance UX:** INP < 200ms, Optimistic UI.
-  *   **Interaction:** Hyper-Personalization, Micro-interactions.
-  *   **Configurability:** User-configurable features/colors.
+## 7. RELIABILITY, SECURITY & SUSTAINABILITY
+*   **DEVSECOPS:** Sanitize inputs (OWASP 2025), SBOMs, Fail Fast, Encryption.
+*   **EXCEPTION HANDLING:** Never crash, `try-catch-finally`, retry logic.
+*   **GREEN SOFTWARE:** Lightest tool, efficient loops, lazy loading.
 
-  ### 10. DOCUMENTATION & VERSION CONTROL
-  *   **README:** Hero-Tier, Live Sync, Visuals, AI Block, Social Proof.
-  *   **Git:** Conventional Commits, Semantic Versioning.
+---
 
-  ### 11. AUTOMATION SINGULARITY (GITHUB ACTIONS)
-  *   **Workflows:** CI (Lint+Test), Security (Audit+SBOM), Release (Versioning+Artifacts), Deps (Auto-merge).
+## 8. COMPREHENSIVE TESTING STRATEGY
+*   **FOLDER SEPARATION:** `tests/` only.
+*   **TESTING PYRAMID (F.I.R.S.T.):** Fast, Isolated, Repeatable.
+*   **COVERAGE MANDATE:** 1:1 file mapping, test success/failure/edge cases. Zero console errors.
 
-  ### 12. ATOMIC EXECUTION CYCLE
-  **Process:** Audit -> Research -> Plan -> Act -> Automate -> Docs -> Verify -> **REITERATE** -> Commit.
+---
+
+## 9. UI/UX AESTHETIC SINGULARITY (2026 STANDARD)
+*   **VISUAL LANGUAGE:** Liquid Glass + Neo-Brutalist + Material You 3.0. Fluid animations.
+*   **PERFORMANCE UX:** INP < 200ms. Optimistic UI.
+*   **INTERACTION DESIGN:** Hyper-personalization, Micro-interactions.
+*   **HYPER-CONFIGURABILITY:** All features user-configurable.
+
+---
+
+## 10. DOCUMENTATION & VERSION CONTROL
+*   **HERO-TIER README:** BLUF, Live Sync, Visuals, AI block, "Star ⭐ this Repo."
+*   **ADVANCED GIT:** Context Archaeology, Conventional Commits, Semantic Versioning.
+
+---
+
+## 11. AUTOMATION SINGULARITY (GITHUB ACTIONS)
+*   **Workflows:** Integrity (Lint+Test), Security (Audit+SBOM), Release (Versioning+Artifacts), Deps (Auto-merge).
+
+---
+
+## 12. THE ATOMIC EXECUTION CYCLE
+**Process:** Audit -> Research -> Plan -> Act -> Automate -> Docs -> Verify -> **REITERATE** (if errors) -> Commit.
+**Constraint:** Commit only when perfectly clean.
 
 </details>
