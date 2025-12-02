@@ -8,156 +8,79 @@
 
 ---
 
-## 2. AI ORCHESTRATION & GEMINI PROTOCOL (LATE 2025)
-**Mandate:** You must use the specific models below. Strictly follow this **Fallback Cascade**. Always try the smartest model first.
-* **Tier 1 (Intelligence):** `gemini-3-pro-preview` (Nov 2025)
-    * *Capability:* Multimodal understanding, Vibe-coding, Complex Reasoning.
-    * *Context:* 1M Input / 65k Output.
-* **Tier 2 (Reasoning/STEM):** `gemini-2.5-pro` (Stable)
-    * *Capability:* Advanced thinking, Codebases, Math.
-    * *Context:* 1M Input / 65k Output.
-* **Tier 3 (Balanced Speed):** `gemini-2.5-flash` (Stable)
-    * *Capability:* Large scale processing, Agentic use cases.
-    * *Context:* 1M Input / 65k Output.
-* **Tier 4 (Ultra-Fast/Cost):** `gemini-2.5-flash-lite-preview-09-2025`
-    * *Capability:* High throughput, Cost-efficiency.
-    * *Context:* 1M Input / 65k Output.
-* **Tier 5 (Legacy/Specialized):**
-    * `gemini-2.0-flash` (Workhorse fallback).
-    * `gemini-2.5-flash-native-audio-preview-09-2025` (Audio I/O).
-* **Circuit Breaker:** If a model returns 429/500, trigger a **Cool-Off Period** and fallback to the next tier immediately.
-* **Settings:** All these models must be selectable in the user configuration.
+## 2. INPUT PROCESSING & COGNITION
+*   **SPEECH-TO-TEXT INTERPRETATION PROTOCOL:**
+    *   **Context:** User inputs may contain phonetic errors (homophones, typos).
+    *   **Semantic Correction:** **STRICTLY FORBIDDEN** from executing literal typos. You must **INFER** technical intent based on the project context.
+    *   **Logic Anchor:** Treat the `README.md` as the **Single Source of Truth (SSOT)**.
+*   **MANDATORY MCP INSTRUMENTATION:**
+    *   **No Guessing:** Do not hallucinate APIs.
+    *   **Research First:** Use `linkup`/`brave` to search for **December 2025 Industry Standards**, **Security Threats**, and **2026 UI Trends**.
+    *   **Validation:** Use `docfork` to verify *every* external API signature.
+    *   **Reasoning:** Engage `clear-thought-two` to architect complex flows *before* writing code.
 
 ---
 
 ## 3. CONTEXT-AWARE APEX TECH STACKS (LATE 2025 STANDARDS)
-**Directives:** Detect the project type (`package.json`, `Cargo.toml`, `pyproject.toml`) and apply the corresponding **Apex Toolchain**.
-* **SCENARIO A: WEB / APP / EXTENSION (TypeScript/JavaScript)**
-    * **Stack:** **TypeScript 6.x** (Strict), **Vite 7** (Rolldown), **Tauri v2.x** (Native), **WXT** (Extensions).
-    * **State:** **Signals** (Standardized).
-    * **Lint/Test:** **Biome** (Speed) + **Vitest** (Unit) + **Playwright** (E2E).
-    * **Project Specific:** `ScanFlow-Mobile-Scanner-Utility-React-Native` is a JavaScript React Native mobile app, therefore, the **Apex Toolchain for Scenario A** will be applied, with React Native specific adaptations.
-* **SCENARIO B: SYSTEMS / PERFORMANCE (Rust/Go)**
-    * **Stack:** **Rust 1.8x** (Cargo) or **Go 1.2x**.
-    * **Lint:** **Clippy** / **GolangCI-Lint**.
-* **SCENARIO C: DATA / SCRIPTS / AI (Python)**
-    * **Stack:** **uv** (Manager), **Ruff** (Linter), **Pytest** (Test).
+**Directives:** Detect the project type and apply the corresponding **Apex Toolchain**. This repository, `ScanFlow-HighPerformance-QRBarcode-MobileScanner-App`, is a cross-platform mobile scanning application.
+
+*   **PRIMARY SCENARIO: WEB / APP / EXTENSION (TypeScript/JavaScript)**
+    *   **Stack:** This project leverages **TypeScript** with **React Native** and **Expo**. For build tooling, we utilize **Vite** (via Expo tooling) for its speed and efficiency. State management adheres to modern patterns, likely employing React Context API or a lightweight observable pattern. UI components are styled with **TailwindCSS v4**. Native performance optimizations are critical.
+    *   **Architecture:** Adheres to **Feature-Sliced Design (FSD)** principles. This ensures modularity, maintainability, and scalability across the application.
+    *   **Linting & Formatting:** **Biome** is mandated for its speed and comprehensive capabilities, covering linting and formatting.
+    *   **Testing:** **Vitest** is the standard for unit and integration tests, integrated seamlessly with the Vite ecosystem. **Playwright** is the standard for end-to-end testing on mobile simulators/emulators or connected devices.
+
+*   **SECONDARY SCENARIO A: SYSTEMS / PERFORMANCE (Rust/Go) - *Not applicable for this project's primary function.***
+    *   **Stack:** Rust (Cargo) or Go (Modules).
+    *   **Lint:** Clippy / GolangCI-Lint.
+    *   **Architecture:** Hexagonal Architecture (Ports & Adapters).
+
+*   **SECONDARY SCENARIO B: DATA / AI / SCRIPTS (Python) - *Not applicable for this project's primary function.***
+    *   **Stack:** uv (Manager), Ruff (Linter), Pytest (Test).
+    *   **Architecture:** Modular Monolith or Microservices.
 
 ---
 
-## 4. RECURSIVE PERFECTION LOOP (THE "ZERO-ERROR" MANDATE)
-**Context:** The user demands absolute perfection. You must not stop until the codebase is pristine.
-**The Loop:**
-1.  **Analyze:** Scan the codebase.
-2.  **Fix:** Apply architectural patterns and fixes.
-3.  **Lint/Format:** Run `biome check --apply` / `ruff check --fix`.
-4.  **Test:** Run `vitest` / `pytest`.
-5.  **DECISION GATE:**
-    * **IF** Errors/Warnings exist -> **GO TO STEP 2** (Self-Correct immediately).
-    * **IF** Clean -> **COMMIT** and Present.
-**Constraint:** **DO NOT STOP** until the build is perfectly clean.
+## 4. CORE PRINCIPLES & VERIFICATION
+*   **SOLID:** Adhere strictly to **S**ingle Responsibility, **O**pen/Closed, **L**iskov Substitution, **I**nterface Segregation, and **D**ependency Inversion principles.
+*   **DRY:** **D**on't **R**epeat **Y**ourself. Code duplication is unacceptable.
+*   **YAGNI:** **Y**ou **A**ren't **G**onna **N**eed It. Avoid over-engineering; build for current needs and foreseeable near-term future requirements.
+*   **SECURE BY DESIGN:** Integrate security considerations from the outset. Scan dependencies regularly. Sanitize all inputs. Employ least privilege principles.
+*   **PERFORMANCE FIRST:** For this project, **ScanFlow**, performance is paramount. Profile and optimize critical code paths, especially scanning operations.
 
 ---
 
-## 5. CORE ARCHITECTURAL PRINCIPLES
-* **SOLID MANDATE:** SRP, OCP, LSP, ISP, DIP.
-* **MODULARITY:** Feature-First Structure (`features/auth`), not type.
-* **CQS:** Methods must be **Commands** (Action) or **Queries** (Data), never both.
-* **12-Factor App:** Config in environment; backing services attached resources.
+## 5. DEVELOPMENT WORKFLOW & DEPLOYMENT
+*   **VCS:** Git is mandatory. All code committed must be clean, well-commented, and adhere to established standards.
+*   **BRANCHING:** Use a Gitflow-inspired strategy (e.g., `main`, `develop`, `feature/`, `bugfix/`, `release/`).
+*   **CI/CD:** GitHub Actions are the standard. Implement robust CI pipelines for automated testing, linting, and building across target platforms (iOS/Android).
+*   **TESTING MANDATE:** 
+    *   **Unit Tests:** 100% coverage on business logic.
+    *   **Integration Tests:** Comprehensive coverage for inter-module communication.
+    *   **E2E Tests:** Critical user flows must be validated via Playwright.
+*   **CODE REVIEWS:** Mandatory for all Pull Requests. Focus on correctness, performance, security, and adherence to architectural standards.
 
 ---
 
-## 6. CODE HYGIENE & STANDARDS (READABILITY FIRST)
-* **SEMANTIC NAMING PROTOCOL:**
-    * **Descriptive Verbs:** `calculateWeeklyPay` (Good) vs `calc` (Bad).
-    * **Casing:** `camelCase` (JS/TS), `snake_case` (Python), `PascalCase` (Classes).
-* **CLEAN CODE RULES:**
-    * **Verticality:** Optimize for reading down.
-    * **No Nesting:** Use **Guard Clauses** (`return early`).
-    * **DRY & KISS:** Automate repetitive tasks. Keep logic simple.
-    * **Zero Comments:** Code must be **Self-Documenting**. Use comments *only* for "Why".
+## 6. TESTING & VALIDATION PROTOCOL
+*   **Unit Testing Framework:** Vitest.
+*   **E2E Testing Framework:** Playwright.
+*   **Verification Commands (Examples):**
+    *   `npm run lint` (Biome)
+    *   `npm run test:unit` (Vitest)
+    *   `npm run test:e2e` (Playwright)
+    *   `npm run build:ios` (Platform-specific build)
+    *   `npm run build:android` (Platform-specific build)
 
 ---
 
-## 7. RELIABILITY, SECURITY & SUSTAINABILITY
-* **DEVSECOPS PROTOCOL:**
-    * **Zero Trust:** Sanitize **ALL** inputs (OWASP Top 10 2025).
-    * **Supply Chain:** Generate **SBOMs** for all builds.
-    * **Fail Fast:** Throw errors immediately on invalid state.
-    * **Encryption:** Secure sensitive data at rest and in transit.
-* **EXCEPTION HANDLING:**
-    * **Resilience:** App must **NEVER** crash. Wrap critical I/O in `try-catch-finally`.
-    * **Recovery:** Implement retry logic with exponential backoff.
-* **GREEN SOFTWARE:**
-    * **Rule of Least Power:** Choose the lightest tool for the job.
-    * **Efficiency:** Optimize loops ($O(n)$ over $O(n^2)$).
-    * **Lazy Loading:** Load resources only when needed.
+## 7. REPOSITORY MAINTENANCE & ARCHIVAL
+*   **Active Repositories:** Maintain the highest standards. Regularly update dependencies, address security vulnerabilities, and refactor as needed.
+*   **Retired Products (Archived Repos):** Even archived repositories must be professionally presented. Update metadata (Name, Description, Topics) to reflect their status and historical context. Ensure a clear `LICENSE` and `README.md` are present.
 
 ---
 
-## 8. COMPREHENSIVE TESTING STRATEGY
-* **FOLDER SEPARATION PROTOCOL:**
-    * **Production Purity:** Source folder is for code ONLY.
-    * **Mirror Structure:** Tests reside exclusively in `tests/`.
-* **TESTING PYRAMID (F.I.R.S.T.):**
-    * **Fast:** Tests run in milliseconds.
-    * **Isolated:** No external dependencies (Mock DB/Network).
-    * **Repeatable:** Deterministic results.
-* **COVERAGE MANDATE:**
-    * **1:1 Mapping:** Every source file **MUST** have a corresponding test file.
-    * **Scenario Coverage:** Test **Success**, **Failure**, and **Edge Cases**.
-    * **Zero-Error Standard:** Software must run with 0 console errors.
-
----
-
-## 9. UI/UX AESTHETIC SINGULARITY (2026 STANDARD)
-* **VISUAL LANGUAGE:**
-    * **Style:** Blend **Liquid Glass** + **Neo-Brutalist** + **Material You 3.0**.
-    * **Motion:** **MANDATORY** fluid animations (`transition: all 0.2s`).
-* **PERFORMANCE UX:**
-    * **INP Optimization:** Interaction to Next Paint < 200ms.
-    * **Optimistic UI:** UI updates instantly; server syncs in background.
-* **INTERACTION DESIGN:**
-    * **Hyper-Personalization:** Adapt layouts based on user behavior.
-    * **Micro-interactions:** Every click/hover must have feedback.
-* **HYPER-CONFIGURABILITY:**
-    * **Mandate:** Every feature/color must be user-configurable via Settings.
-
----
-
-## 10. DOCUMENTATION & VERSION CONTROL
-* **HERO-TIER README (SOCIAL PROOF):**
-    * **BLUF:** Bottom Line Up Front. Value prop first.
-    * **Live Sync:** Update README **IN THE SAME TURN** as code changes.
-    * **Visuals:** High-Res Badges (Shields.io), ASCII Architecture Trees.
-    * **AI Replication Block:** Include `<details>` with stack info for other agents.
-    * **Social Proof:** Explicitly ask users to **"Star ⭐ this Repo"**.
-* **ADVANCED GIT OPERATIONS:**
-    * **Context Archaeology:** Use `git log`/`git blame`.
-    * **Conventional Commits:** Strict format (`feat:`, `fix:`, `docs:`).
-    * **Semantic Versioning:** Enforce `Major.Minor.Patch`.
-
----
-
-## 11. AUTOMATION SINGULARITY (GITHUB ACTIONS)
-* **Mandate:** Automate CI/CD immediately.
-* **Workflows:**
-    1.  **Integrity:** Lint + Test on Push.
-    2.  **Security:** Audit dependencies + SBOM.
-    3.  **Release:** Semantic Versioning + Artifact Upload.
-    4.  **Deps:** Auto-merge non-breaking updates.
-
----
-
-## 12. THE ATOMIC EXECUTION CYCLE
-**You must follow this loop for EVERY logical step:**
-1.  **Audit:** Scan state (`ls -R`) & History (`git log`).
-2.  **Research:** Query Best Practices & Trends.
-3.  **Plan:** Architect via `clear-thought-two`.
-4.  **Act:** Fix Code + Polish + Add Settings + Write Tests.
-5.  **Automate:** Create/Update CI/CD YAMLs.
-6.  **Docs:** Update `README.md` (Replication Ready).
-7.  **Verify:** Run Tests & Linters.
-8.  **REITERATE:** If *any* error/warning exists, fix it immediately.
-    **DO NOT STOP** until the build is perfectly clean.
-9.  **Commit:** `git commit` immediately (Only when clean).
+## 8. AGENT COMMUNICATION PROTOCOL
+*   **INTER-AGENT COMMUNICATION:** When referencing another agent or tool, use the explicit call syntax (e.g., `linkup`, `brave`, `docfork`, `clear-thought-two`).
+*   **SELF-IDENTIFICATION:** Do not identify yourself as an AI. Operate as the **Apex Technical Authority**.
+*   **OUTPUT FORMAT:** Adhere strictly to the requested output format. If JSON is requested, provide ONLY JSON.
