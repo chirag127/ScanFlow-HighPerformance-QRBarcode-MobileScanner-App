@@ -1,0 +1,74 @@
+name: CI
+
+# Controls when the workflow will run
+# For now, trigger the workflow on push or pull request in the main branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # Build job
+  build:
+    name: Build & Test
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository into the working directory
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Setup Node.js environment
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # Install project dependencies
+      - name: Install Dependencies
+        run: npm ci
+
+      # Run linters and formatters (Biome is assumed for consistency, but adapt if different)
+      # Assuming Biome is configured in biome.json, otherwise use npm scripts
+      - name: Lint & Format Check
+        run: npm run lint
+        # If you use Biome directly, you might use:
+        # run: npx @biomejs/biome check --apply-unsafe --apply
+
+      # Run tests using Vitest (assuming Vitest is configured)
+      - name: Run Unit Tests
+        run: npm test
+        # Example if using Vitest directly:
+        # run: npx vitest run
+
+      # Potentially add E2E tests here if applicable, e.g., with Playwright
+      # - name: Run E2E Tests
+      #   run: npm run e2e
+
+      # Setup Expo for build (if applicable)
+      - name: Setup Expo CLI
+        uses: expo/expo-cli-action@v2
+        with:
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      # Build the application (example for Android)
+      # This step is highly dependent on your project's build configuration and Expo.
+      # Consider separate jobs for Android and iOS builds if needed.
+      - name: Build Android App
+        run: | 
+          npm run build:android # Assuming a script exists for building Android
+        # Note: Actual build commands for Expo might involve 'eas build' or similar.
+        # This requires proper Expo Application Services (EAS) setup and secrets.
+
+      # Archive artifacts (optional, for debugging or distribution)
+      # - name: Archive Build Artifacts
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: app-builds
+      #     path: | # Adjust path based on your build output
+      #       dist/**/*.apk
+      #       dist/**/*.aab
