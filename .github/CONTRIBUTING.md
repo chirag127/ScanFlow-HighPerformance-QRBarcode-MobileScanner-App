@@ -1,148 +1,156 @@
-# CONTRIBUTING GUIDELINES
+# Contributing to ScanFlow-HighPerformance-QRBarcode-MobileScanner-App
 
-Welcome to the ScanFlow Mobile Scanner Utility! We are thrilled you're interested in contributing to this high-performance, cross-platform mobile application.
+Thank you for considering contributing to `ScanFlow-HighPerformance-QRBarcode-MobileScanner-App`! We aim to maintain an elite, zero-defect, high-velocity, and future-proof codebase, reflecting the standards of the Apex Technical Authority.
 
-Our mission is to deliver a **zero-defect, high-velocity, future-proof** mobile data capture solution. To maintain this standard and ensure a smooth contribution process, please adhere to the following guidelines.
+## 1. Code of Conduct
 
-## 1. CODE OF CONDUCT
+This project adheres to the Contributor Covenant Code of Conduct. Please review the [CODE_OF_CONDUCT.md](https://github.com/chirag127/ScanFlow-HighPerformance-QRBarcode-MobileScanner-App/blob/main/CODE_OF_CONDUCT.md) file for details on expected behavior.
 
-By participating, you are expected to uphold our **Code of Conduct**. This ensures a welcoming and respectful environment for all contributors.
+## 2. Core Principles (Apex Standard)
 
-## 2. DEVELOPMENT ENVIRONMENT SETUP
+*   **Zero-Defect:** Strive for the highest quality code with comprehensive testing.
+*   **High-Velocity:** Efficient development cycles, clear communication, and robust CI/CD.
+*   **Future-Proof:** Design for scalability, maintainability, and adaptability to evolving technologies.
+*   **Professionalism:** Maintain a high standard of documentation, naming conventions, and architectural integrity.
 
-To contribute, you'll need to set up your local development environment. We leverage **React Native** and **Expo** for cross-platform development.
+## 3. Getting Started
 
-1.  **Clone the Repository:**
-    ```bash
-    git clone https://github.com/your-username/scanflow-mobile-scanner-utility.git
-    cd scanflow-mobile-scanner-utility
-    ```
+### 3.1. Prerequisites
 
-2.  **Install Node.js & npm/yarn:** Ensure you have Node.js (LTS recommended) and npm or yarn installed.
+Before you can contribute, ensure you have the following installed:
 
-3.  **Install Project Dependencies:**
-    ```bash
-    npm install
-    # or
-    yarn install
-    ```
+*   **Node.js:** Version 20.x or higher (for React Native and Expo).
+*   **npm or Yarn:** Package manager.
+*   **Expo CLI:** `npm install -g expo-cli` or `yarn global add expo-cli`.
+*   **Platform-Specific SDKs:** Xcode (for iOS development) and Android Studio (for Android development).
 
-4.  **Install Expo CLI:**
-    ```bash
-    npm install -g expo-cli
-    # or
-    yarn global add expo-cli
-    ```
+### 3.2. Fork and Clone
 
-5.  **Start the Development Server:**
-    ```bash
-    npx expo start
-    ```
+1.  Fork the repository: `https://github.com/chirag127/ScanFlow-HighPerformance-QRBarcode-MobileScanner-App/fork`
+2.  Clone your forked repository:
+    bash
+    git clone https://github.com/YOUR_USERNAME/ScanFlow-HighPerformance-QRBarcode-MobileScanner-App.git
+    cd ScanFlow-HighPerformance-QRBarcode-MobileScanner-App
+    
 
-6.  **Run on Device/Simulator:** Use the Expo Go app on your physical device or an emulator/simulator to test your changes.
+### 3.3. Install Dependencies
 
-## 3. BRANCHING STRATEGY
+Install project dependencies using your preferred package manager:
 
-We follow a simplified Gitflow-like branching strategy:
+bash
+# Using npm
+npm install
 
-*   **`main`**: Production-ready code. **DO NOT** commit directly to `main`.
-*   **`develop`**: Integration branch for new features and fixes. This is where most development happens.
-*   **Feature Branches**: Create branches from `develop` for new features or bug fixes. Use descriptive names (e.g., `feature/qr-code-scanner-optimization`, `fix/barcode-decoding-accuracy`).
-    ```bash
-    git checkout develop
-    git pull origin develop
-    git checkout -b feature/your-feature-name
-    ```
+# Or using Yarn
+yarn install
 
-## 4. CONTRIBUTION WORKFLOW
 
-1.  **Fork the Repository**: Fork the `scanflow-mobile-scanner-utility` repository to your GitHub account.
-2.  **Clone Your Fork**: Clone your forked repository locally.
-3.  **Create a Branch**: Create a new branch for your contribution (see Branching Strategy).
-4.  **Implement Changes**: Write your code, ensuring it adheres to our coding standards.
-5.  **Test Thoroughly**: Run all tests to ensure no regressions are introduced. If you're adding new functionality, write new tests.
-    ```bash
-    # Example test commands (adjust as per your project's test setup)
-    npm test
-    # or
-    yarn test
-    ```
-6.  **Lint & Format**: Ensure your code is linted and formatted correctly.
-    ```bash
-    # Example lint/format commands (adjust as per your project's setup)
-    npm run lint -- --fix
-    npm run format -- --write
-    # or
-    yarn lint --fix
-    yarn format --write
-    ```
-7.  **Commit Your Changes**: Use **Conventional Commits** for your commit messages.
-    ```bash
-    # Example:
-    git commit -m "feat(scanner): Improve QR code decoding performance"
-    git commit -m "fix(decoder): Resolve issue with EAN-13 barcode parsing"
-    ```
-8.  **Push to Your Fork**: Push your branch to your forked repository.
-    ```bash
-    git push origin feature/your-feature-name
-    ```
-9.  **Create a Pull Request (PR)**: Open a Pull Request from your feature branch to the `develop` branch of the **original** `scanflow-mobile-scanner-utility` repository.
-    *   **Title**: Follow the Conventional Commits format.
-    *   **Description**: Clearly explain the changes, the problem solved, and how to test them. Reference any related issues.
+## 4. Development Workflow
 
-## 5. CODING STANDARDS
+### 4.1. Branching Strategy
 
-We adhere to strict coding standards to maintain code quality and consistency:
+*   Create a new branch for every feature or bug fix.
+*   Branch names should follow a convention: `feature/your-feature-name`, `bugfix/issue-number-short-description`.
+*   Keep branches short-lived.
 
-*   **Language**: JavaScript (ESNext), with React Native conventions.
-*   **Style**: Follow standard React Native and Expo best practices.
-*   **Linting**: `Biome` will be used for linting and formatting. Ensure your code passes `biome check --apply` before committing.
-*   **Testing**: `Vitest` and `Playwright` will be used for unit and E2E testing, respectively. Aim for high test coverage.
-*   **SOLID Principles**: Strive to apply SOLID principles where applicable.
-*   **DRY (Don't Repeat Yourself)**: Avoid code duplication.
-*   **KISS (Keep It Simple, Stupid)**: Prefer straightforward solutions.
-*   **Readability**: Write clear, concise, and self-documenting code. Avoid excessive comments; the code should explain itself.
-*   **Error Handling**: Implement robust error handling and logging. Apps should **never crash**.
+### 4.2. Running the App
 
-## 6. TESTING REQUIREMENTS
+*   **Development Server:**
+    bash
+    # Using npm
+npx expo start
 
-*   **Unit Tests**: Write unit tests for all new components, logic, and utilities using `Vitest`.
-*   **Integration Tests**: For interactions between components or modules.
-*   **End-to-End (E2E) Tests**: Use `Playwright` to test critical user flows on target platforms.
-*   **Coverage**: Aim for a high test coverage (e.g., 90%+). Every source file should have corresponding tests.
+# Or using Yarn
+yarn start
 
-## 7. COMMIT MESSAGE FORMAT
+    This will start the Metro bundler and provide QR codes to open the app on an emulator or physical device via the Expo Go app.
 
-We use **Conventional Commits** for a structured and understandable commit history.
+*   **Platform-Specific Builds (Optional, for advanced testing):
+    bash
+    # For Android
+npx expo run:android
 
-```
-<type>[optional scope]: <description>
+# For iOS
+npx expo run:ios
 
-[optional body]
 
-[optional footer]
-```
+### 4.3. Linting and Formatting
 
-*   **Types**: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `chore`.
-*   **Scope**: The part of the codebase affected (e.g., `scanner`, `decoder`, `ui`).
-*   **Description**: Concise summary of the change.
-*   **Body**: More detailed explanation (optional).
-*   **Footer**: For breaking changes (`BREAKING CHANGE:`) or issue references (`Closes #123`).
+We use **Biome** for ultra-fast linting and formatting to ensure code consistency. Before committing, run:
 
-## 8. REPORTING BUGS
+bash
+# Format code
+npx @biomejs/biome format --write .
 
-If you find a bug, please check if it has already been reported. If not, open a new **Bug Report** issue using the provided template.
+# Lint code
+npx @biomejs/biome lint .
 
-## 9. REQUESTING FEATURES
 
-To request a new feature, please open a new issue using the **Feature Request** template.
+*   **Note:** If your IDE has Biome integration, it can format and lint on save.
 
-## 10. PULL REQUEST REVIEW PROCESS
+### 4.4. Testing
 
-*   Your PR will be reviewed by at least one maintainer.
-*   Be prepared to make changes based on feedback.
-*   The goal is constructive collaboration to improve the codebase.
+Automated tests are crucial for maintaining a zero-defect standard. We use **Vitest** for unit and component testing and **Playwright** for end-to-end testing.
 
-## 11. THANK YOU!
+*   **Run Unit Tests:**
+    bash
+    npx vitest
+    
 
-Thank you for contributing to ScanFlow Mobile Scanner Utility! Your efforts help us build a premier mobile data capture solution.
+*   **Run End-to-End Tests:**
+    bash
+    npx playwright test
+    
+
+## 5. Making a Contribution
+
+### 5.1. Contribution Workflow
+
+1.  **Start a Discussion:** For significant changes, please open an issue or a discussion first to explain your proposal and get feedback.
+2.  **Branch:** Create a new branch for your changes (see Section 4.1).
+3.  **Code:** Implement your changes, adhering to the project's coding standards and principles.
+4.  **Test:** Write new tests or update existing ones to cover your changes. Ensure all tests pass.
+5.  **Lint & Format:** Run the linters and formatters (see Section 4.3).
+6.  **Commit:** Write clear, concise commit messages. Follow conventional commit messages if possible.
+7.  **Push:** Push your branch to your fork: `git push origin your-branch-name`.
+8.  **Pull Request (PR):** Open a Pull Request against the `main` branch of the original repository (`chirag127/ScanFlow-HighPerformance-QRBarcode-MobileScanner-App`).
+    *   Provide a clear description of your changes.
+    *   Reference any related issues.
+
+### 5.2. Pull Request Guidelines
+
+*   **Single Responsibility:** PRs should ideally focus on a single feature or bug fix.
+*   **Clear Title and Description:** Explain *what* the PR does and *why*.
+*   **Link Issues:** Use keywords like `Closes #123` to automatically close issues.
+*   **Self-Review:** Before submitting, review your own code and the changes in the PR.
+
+## 6. Architectural Decisions & Guidelines
+
+This project follows the **Apex Technical Authority's** architectural standards for mobile applications, emphasizing performance, scalability, and maintainability.
+
+*   **Framework:** React Native with Expo.
+*   **Language:** TypeScript (with strict typing enabled).
+*   **Styling:** Tailwind CSS v4 (or equivalent utility-first CSS framework).
+*   **State Management:** Utilize React Context API or a lightweight library like Zustand for efficient state management.
+*   **Architecture:** Feature-Sliced Design (FSD) principles are encouraged for modularity and separation of concerns.
+*   **Performance:** Prioritize efficient rendering, optimized image loading, and native module integration where performance is critical (e.g., for the scanner).
+*   **Computer Vision:** Leverage optimized libraries like `react-native-vision-camera` or Expo's barcode scanning capabilities, ensuring minimal overhead.
+
+Refer to the [AGENTS.md](https://github.com/chirag127/ScanFlow-HighPerformance-QRBarcode-MobileScanner-App/blob/main/AGENTS.md) file for detailed AI agent directives and operational standards.
+
+## 7. Reporting Issues
+
+If you find a bug or have a feature request, please use the provided issue templates:
+
+*   **Bug Report:** [New Bug Report](https://github.com/chirag127/ScanFlow-HighPerformance-QRBarcode-MobileScanner-App/issues/new?template=bug_report.md)
+*   **Feature Request:** [New Feature Request](https://github.com/chirag127/ScanFlow-HighPerformance-QRBarcode-MobileScanner-App/issues/new?template=feature_request.md)
+
+Provide as much detail as possible, including steps to reproduce the issue, environment details, and screenshots/recordings if applicable.
+
+## 8. Community & Support
+
+Join our community to discuss, ask questions, and share your ideas.
+
+*   **GitHub Discussions:** [Discussions](https://github.com/chirag127/ScanFlow-HighPerformance-QRBarcode-MobileScanner-App/discussions)
+
+We appreciate your contributions to making `ScanFlow-HighPerformance-QRBarcode-MobileScanner-App` an elite and reliable mobile scanning solution!
